@@ -30,11 +30,22 @@ namespace ConsoleUI
         {
             ProductManager productManager = new ProductManager(new EfProductDal());   //IProductService yaptığım işlem ile burada istediğim sistemle çalışabiliyorum.
 
-            foreach (var product in productManager.GetProductDetails())
-            {
-                Console.WriteLine(product.ProductName+" / "+product.CategoryName);    //Dto joın işlemi ile category tablosunda ki isime ulaşıyorum
+            var result = productManager.GetProductDetails();
 
+            if(result.Success==true)   //UTİLİTİES de ki yapımız ile burada operasyon başarılımı sorgusunu yapıyoruz
+            {
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine(product.ProductName + " / " + product.CategoryName);    //Dto joın işlemi ile category tablosunda ki isime ulaşıyorum
+
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);      
+            }
+
+          
         }
     }
 }

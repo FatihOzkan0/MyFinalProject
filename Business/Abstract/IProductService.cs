@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,13 @@ namespace Business.Abstract
 {
     public interface IProductService
     {
-        List<Product> GetAll();
-        List<Product> GetAllCategoryId(int id);
-        List<Product> GetByUnitPrice (decimal min , decimal max);
-        List<ProductDetailDto> GetProductDetails();
+        IDataResult <List<Product>> GetAll();       //"List<Product> GetAll()"yerine bu methodu yazmamızın sebebi GetAll da doğrulama kontrolleri yapmak. 
+        IDataResult <List<Product>> GetAllCategoryId(int id);
+        IDataResult <List<Product>> GetByUnitPrice (decimal min , decimal max);
+        IDataResult <List<ProductDetailDto>> GetProductDetails();
+        IDataResult <Product> GetById(int productid);     //Tek bir product döndürüyor.
+        IResult Add(Product product);        //IResult dememizin sebebi void yerine ,ekleme operasyonumuzun gerçekleşip gerçekleşmediğini anlayabilmek.
+
 
     }
 }

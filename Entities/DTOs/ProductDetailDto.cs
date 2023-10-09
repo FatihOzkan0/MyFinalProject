@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
-    //Burada yaptığımız DTO işleminin mantığı ben ürünümün kategorisini ıd si ile değil ismi ile göstermek istiyorum o yüzden bir join işlemi yapıyorum.
+    //Burada yaptığımız DTO (Data Transfer Object) işleminin mantığı ben ürünümün kategorisini ıd si ile değil ismi ile göstermek istiyorum o yüzden bir join işlemi yapıyorum.
     public class ProductDetailDto:IDto
     {
         public int ProductId { get; set; }
