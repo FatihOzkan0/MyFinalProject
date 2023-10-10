@@ -29,7 +29,7 @@ namespace ConsoleUI
         private static void Product()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());   //IProductService yaptığım işlem ile burada istediğim sistemle çalışabiliyorum.
-
+            
             var result = productManager.GetProductDetails();
 
             if(result.Success==true)   //UTİLİTİES de ki yapımız ile burada operasyon başarılımı sorgusunu yapıyoruz

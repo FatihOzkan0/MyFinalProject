@@ -29,10 +29,10 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            if (product.ProductName.Length < 2)
-            {
-                return new ErrorResult(Messages.ProductNameInvalid);  //String kodları direk projede yazmak yanlıştır o yüzden başka classda yazıp çektik.
-            }
+            //if (product.ProductName.Length < 2)
+            //{
+            //    return new ErrorResult(Messages.ProductNameInvalid);  //String kodları direk projede yazmak yanlıştır o yüzden başka classda yazıp çektik.
+            //}
 
             _productDal.Add(product);
             

@@ -9,8 +9,8 @@ namespace Core.Utilities.Results
     public class Result : IResult
     {
 
-  /* this(success): Eğer 2 parametre girilirse Result newlendiğinde aşağıdaki tek parametreleli constuda çalıştır.Bunu yapmamızın nedeni istersek message
-   girmeyiz sadece success verebiliriz.*/
+    /* this(success): Eğer 2 parametre girilirse Result newlendiğinde aşağıdaki tek parametreleli constuda çalıştır.Bunu yapmamızın nedeni istersek message
+       girmeyiz sadece success verebiliriz. */
         public Result(bool success, string message):this(success)      
         {
            Message = message;       
