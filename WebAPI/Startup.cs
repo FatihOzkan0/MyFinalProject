@@ -33,8 +33,8 @@ namespace WebAPI
 
             services.AddControllers();
 
-            services.AddSingleton<IProductService,ProductManager>();    //Birisi senden Constructor da IProductService isterse ona ProductManager new iver.
-            services.AddSingleton<IProductDal, EfProductDal>();
+            //services.AddSingleton<IProductService,ProductManager>();    //Birisi senden Constructor da IProductService isterse ona ProductManager new iver.
+            //services.AddSingleton<IProductDal, EfProductDal>();
 
             services.AddSwaggerGen(c =>
             {
