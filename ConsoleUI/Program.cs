@@ -20,7 +20,7 @@ namespace ConsoleUI
         {
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
-            foreach (var c in categoryManager.GetAll())
+            foreach (var c in categoryManager.GetAll().Data)
             {
                 Console.WriteLine(c.CategoryName);
             }
@@ -28,7 +28,7 @@ namespace ConsoleUI
 
         private static void Product()
         {
-            ProductManager productManager = new ProductManager(new EfProductDal());   //IProductService yaptığım işlem ile burada istediğim sistemle çalışabiliyorum.
+            ProductManager productManager = new ProductManager(new EfProductDal(), new CategoryManager(new EfCategoryDal()));   //IProductService yaptığım işlem ile burada istediğim sistemle çalışabiliyorum.
             
             var result = productManager.GetProductDetails();
 

@@ -21,10 +21,15 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();  //Birisi senden IProductService isterse ona ProductManager ver.   
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
 
-           
-            
-              //AOP; Aşağıda ki kodlar yukarıda ki sınıfların aspecti var mı diye kontrol eder ve var ise attribute çalıştırır.
-            
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
+
+
+
+
+
+            //AOP; Aşağıda ki kodlar yukarıda ki sınıfların aspecti var mı diye kontrol eder ve var ise attribute çalıştırır ve ValidationAspect çalışır.
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

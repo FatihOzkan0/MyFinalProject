@@ -18,6 +18,8 @@ namespace Business.Abstract
         IDataResult <Product> GetById(int productid);     //Tek bir product döndürüyor.
         IResult Add(Product product);        //IResult dememizin sebebi void yerine ,ekleme operasyonumuzun gerçekleşip gerçekleşmediğini anlayabilmek.
 
+        IResult Update(Product product);
+
 
     }
 }

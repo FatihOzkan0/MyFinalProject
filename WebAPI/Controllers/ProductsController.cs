@@ -14,10 +14,10 @@ namespace WebAPI.Controllers
     {
 
         //IoC Container(Inversion of Control): IoC nin içine referanslar koyarız new EfProduct gibi sonra ihtiyacı olanlar onu alıp kullanır.Bunu yapmamızın sebebi bağımlılığı kaldırmak.
-        //Bunu oluşturmak için API klasöründe startup a tıkla ConfigureServices methoduna gel.
+        //Bunu Business da DependcyResolvers içinde autofac de yaptık. 
 
 
-        IProductService _productService;    //IoC ile burada bağımlı olmadan productManager ve EfProductDal ı newledik Startup da.
+        IProductService _productService;    
 
         public ProductsController(IProductService productService)
         {
